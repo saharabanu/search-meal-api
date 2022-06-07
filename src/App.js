@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import AllMeals from './Components/AllMeals/AllMeals';
 
 function App() {
+  
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Search Your Favorite Meal </h2>
+      <AllMeals></AllMeals>
+      <footer>
+        <p>CopyRights 2022 by Sahara</p>
+      </footer>
     </div>
   );
 }
