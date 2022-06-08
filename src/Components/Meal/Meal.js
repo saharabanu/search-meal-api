@@ -12,7 +12,7 @@ const Meal = ({meal}) => {
                 <h4>{meal.strMeal}</h4>
                 <p>{meal.strInstructions.slice(0,50)}</p>
                 <div className="btn">
-                    <a href={meal.strYoutube} target="_blank" rel="noopener noreferrer">Know More</a>
+                    <a href={meal.strYoutube} target="_blank" rel="noopener noreferrer">Watch More</a>
                 </div>
                 </div>
             </div>

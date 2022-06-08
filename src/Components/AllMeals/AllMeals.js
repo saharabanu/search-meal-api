@@ -2,43 +2,59 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Meal from '../Meal/Meal';
 
+
 const AllMeals = () => {
+  const [data, setData] = useState(false);
     const [meals, setMeals] = useState([]);
   const [search, setSearch] = useState('')
 
+
+  const searchRecipes = async () => {
+    setData(true);
+    
+    const res = await axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`);
+    setMeals(res.data.meals);
+    setData(false);
+  };
+
+
     useEffect(()=>{
-            axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
-        .then(res => {
-          console.log(res.data.meals)
-          setMeals(res.data.meals)
-        })
-        .catch(err => console.log(err.message))
-       
+      
+      searchRecipes()
         
-      },[search])
+        
+      },[])
       const handleChange = (e)=>{
-        console.log(e.target.value);
-        if(e.target.value === null){
-            return alert('not valid')
-        }
-        else{
-            setSearch(e.target.value)
-        }
+        setSearch(e.target.value)
         
       }
-     
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        searchRecipes();
+        setSearch('')
+      }
 
 
     return (
         <div className='container'>
 
-           
+           <form onSubmit={ handleSubmit}>
             <div className="input">
-            <input type="search" placeholder='Enter Meal Name' onChange={handleChange} required/>
+            <input className="input-filed"  placeholder='Enter Meal Name' value={search}disabled={data}  onChange={handleChange} required/>
+            <div>
+            <input
+                disabled={data || !search}
+                type="submit"
+                className='submit'
+                value="Search"
+            />
             </div>
-            {/* <button onClick={()=>submitButton()}>Search</button> */}
+            </div>
+            
+            </form>
             <div className="meal-card">
-            {(meals ===null)?<h2>Please, Enter Valid Meal Name</h2> :meals.map(meal=>{
+            {(meals ===null)?<h4 className='no-found'>Please, Enter Valid Meal Name</h4> : meals.map(meal=>{
                 return (
                     <Meal key={meal.idMeal} meal={meal}></Meal>
                 )
