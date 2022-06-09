@@ -10,9 +10,9 @@ function App() {
     <div className="App">
       <h2>Search Your Favorite Meal </h2>
       <AllMeals></AllMeals>
-      <footer>
+      {/* <footer>
         <p>CopyRights 2022 by Sahara</p>
-      </footer>
+      </footer> */}
     </div>
   );
 }

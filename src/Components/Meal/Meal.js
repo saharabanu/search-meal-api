@@ -9,7 +9,8 @@ const Meal = ({meal}) => {
                     <img src={meal.strMealThumb} alt="" />
                 </div>
                 <div className="meal-card-body">
-                <h4>{meal.strMeal}</h4>
+                    
+                <h4>{meal.strMeal} </h4>
                 <p>{meal.strInstructions.slice(0,50)}</p>
                 <div className="btn">
                     <a href={meal.strYoutube} target="_blank" rel="noopener noreferrer">Watch More</a>

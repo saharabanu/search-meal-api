@@ -13,6 +13,7 @@ const AllMeals = () => {
     setData(true);
     
     const res = await axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`);
+    console.log(res.data.meals)
     setMeals(res.data.meals);
     setData(false);
   };
@@ -37,30 +38,34 @@ const AllMeals = () => {
 
 
     return (
+      <div className='food-contain'>
         <div className='container'>
 
            <form onSubmit={ handleSubmit}>
-            <div className="input">
-            <input className="input-filed"  placeholder='Enter Meal Name' value={search}disabled={data}  onChange={handleChange} required/>
-            <div>
-            <input
-                disabled={data || !search}
-                type="submit"
-                className='submit'
-                value="Search"
-            />
+             <div className="form">
+                <div className="input">
+                    <input className="input-filed"  placeholder='Enter Meal Name' value={search}disabled={data}  onChange={handleChange} required/>
+                <div>
+                    <input
+                    disabled={data || !search}
+                    type="submit"
+                    className='submit'
+                    value="Search"
+                    />
+                </div>
             </div>
             </div>
             
             </form>
             <div className="meal-card">
-            {(meals ===null)?<h4 className='no-found'>Please, Enter Valid Meal Name</h4> : meals.map(meal=>{
+            {(meals ===null)?<h3 className='no-found'>Please, Enter Valid Meal Name and Refresh</h3> : meals.map(meal=>{
                 return (
                     <Meal key={meal.idMeal} meal={meal}></Meal>
                 )
             })}
             </div>
             
+        </div>
         </div>
     );
 };

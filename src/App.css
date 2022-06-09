@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
+  background-color: #000;
+
 }
 .container{
   margin:0 auto;
@@ -11,14 +13,13 @@
  
 }
 .App{
-  background-color: #000;
   color:#fff;
-  height: 100%;
+  
+ 
 
 }
 .no-found{
-  text-align: center;
-  color:red;
+  color:tomato;
 }
 .App h2{
   text-align: center;
@@ -28,18 +29,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  
+  
   
 }
 .input-filed{
   outline:none;
-  padding:15px 10px;
+  padding:15px 7px;
   width:40%;
-  border-radius: 5px;
   border:none;
   font-size: 18px;
+  background-color: #fff;
   
 }
+.food-contain{
+  margin: 40px 0;
+}
+
 
 .meal-card{
   display: grid;
@@ -51,61 +58,61 @@
 }
 .card{
   border:1px solid #fff;
-  border-radius: 10px;
-  box-shadow: 5px  5px 5px gray ;
+  background-color: #fff;
+  border-radius: 2px; 
+  
   
  
  
 }
 .meal-card-body{
   padding: 10px 20px;
+ 
 }
 .meal-card-body p{
   padding: 5px 0;
 }
+.img{
+  overflow: hidden;
+  
+}
+
 .img img{
   width: 100%;
   height:200px ;
-  border-radius: 10px;
+  transition: transform .3s ease;
+  cursor: pointer;
+  /* border-radius: 10px; */
+}
+.img img:hover{
+  transform: scale(1.1);
 }
 .btn a{
   text-decoration: none;
-  color:#fff;
+  color:Orange;
+  
+  padding:10px 0 ;
+  
+}
+.btn a:hover{
+  text-decoration:underline;
   
   
+  
+}
+.btn{
+  margin: 8px 0;
 }
 .submit{
   outline:none;
-  background-color: brown;
+  border: none;
+  background-color: orange;
   padding:15px 10px;
+  /* border-radius: 5px; */
   color:#fff;
-  border-radius: 5px;
-  
   font-size: 18px;
 }
-.submit:hover{
-  outline:none;
-  padding:15px 10px;
-  border-radius: 5px;
-  
-  letter-spacing: 5px;
-}
-.btn{
-  
-  background-color: rgb(0, 255, 170);
-  width:103px;
-  padding: 8px 3px;
-  border-radius: 10px;
-  margin: 5px 0;
-}
-.btn:hover{
-  
-  background-color: lightcoral;
-  width:103px;
-  
-  padding: 8px 3px;
-  border-radius: 10px;
-}
+
 footer{
   background-color: #000;
   padding:20px 10px;
@@ -121,9 +128,6 @@ footer p{
    .input-filed{
     outline:none;
     padding:15px 5px;
-    /* width:100%; */
-    border-radius: 5px;
-    border:1px solid green;
     font-size: 18px;
    
     
@@ -138,9 +142,6 @@ footer p{
   .input-filed{
     outline:none;
     padding:15px 5px;
-   
-    border-radius: 5px;
-   
     font-size: 18px;
    
     
